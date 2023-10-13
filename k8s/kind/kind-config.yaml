@@ -1,0 +1,11 @@
+# to be used during cluster creation like:
+# $ kind create cluster --config=kind-config.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 32080
+    hostPort: 32080
+  - containerPort: 32081
+    hostPort: 32081
