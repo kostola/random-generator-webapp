@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    image: quay.io/alcosta/random-generator-webapp/backend:latest
+    ports:
+      - "9001:8081"
+
+  frontend:
+    image: quay.io/alcosta/random-generator-webapp/frontend:latest
+    init: true
+    ports:
+      - "9000:3000"
+    depends_on:
+      - backend
+    environment:
+      - PUBLIC_API_BASE_URL=http://localhost:9001
