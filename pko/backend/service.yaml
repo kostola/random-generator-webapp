@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-generator-webapp-backend
+  labels:
+    app.kubernetes.io/name: random-generator-webapp
+    app.kubernetes.io/component: backend
+  annotations:
+    package-operator.run/phase: deploy
+spec:
+  selector:
+    app.kubernetes.io/name: random-generator-webapp
+    app.kubernetes.io/component: backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081

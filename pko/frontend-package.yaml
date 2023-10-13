@@ -1,0 +1,8 @@
+apiVersion: package-operator.run/v1alpha1
+kind: Package
+metadata:
+  name: random-generator-webapp-frontend
+spec:
+  image: quay.io/alcosta/package-operator-packages/random-generator-webapp/frontend:latest
+  config:
+    apiBaseUrl: "http://localhost:18081"
